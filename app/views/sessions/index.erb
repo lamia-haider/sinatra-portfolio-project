@@ -1,1 +1,25 @@
+
+<% if flash.has?(:notice) %>
+  <%= flash[:notice] %>
+<% end %>
+
+<br>
 <a href="/sessions/new">New </a>
+
+
+<form action="/sessions/index" method = "post">
+
+<select name="date_select">
+<%Session.all.each do |sess|%> 
+<option value = "<%=sess.id%>"><%=sess.formatted_created_at%></a> </option>
+
+<%end%>
+        <input type="submit" name="submit" id="submit">
+
+</select>
+</form>
+
+
+    
+
+         

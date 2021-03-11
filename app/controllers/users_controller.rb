@@ -1,3 +1,4 @@
+require './config/environment'
 require 'rack-flash'
 
 class UsersController < ApplicationController
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
             redirect '/signup'
         else @user.save
             session[:user_id] = @user.id
-            flash[:notice] = "yay"
+            redirect "/sessions/index"
         end
     
         
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
         user= User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            flash[:notice] = "Welcome"
+            redirect "/sessions/index"
         end
 
     end

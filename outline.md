@@ -21,6 +21,7 @@ Models:
     - :belongs_to Users/ user_id
 
 Stretch Goals
+    - Sessions index that shows the year, which when clicked on opens up months, which open up to dates?
     - Tests
     - CSS, soothing pastel theme?
     - Optional - Can select what type of meditation? Radio for guided v unguided, checkboxes for focused attention, body scan, noting, visualization, resting awareness, reflection, other. Ref: https://www.headspace.com/meditation/techniques

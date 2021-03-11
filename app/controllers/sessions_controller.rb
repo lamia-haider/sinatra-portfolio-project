@@ -20,4 +20,21 @@ class SessionController < ApplicationController
         erb :'/sessions/show'
     end
 
+    get '/sessions/:id/edit' do
+        
+        @edit_session = Session.find_by(params[:id])
+        erb :'/sessions/edit'
+    end
+
+    patch '/sessions/:id/edit' do
+        
+        @updated_session = Session.find_by(params[:id])
+        if params[:duration_minutes] != ""
+            @updated_session.duration_minutes = params[:duration_minutes]
+            @updated_session.mood_rating = params[:mood_rating]
+            @updated_session.save
+        end
+        redirect "/sessions/#{@updated_session.id}"
+    end
+
 end

@@ -1,0 +1,23 @@
+
+
+  <form action='/sessions/<%=@edit_session.id%>/edit' method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+
+
+    How many minutes did you meditate for today?<br>
+    <input type="text" name="duration_minutes" value="<%=@edit_session.duration_minutes"><br>
+
+<br>
+    How did you feel after?<br>
+    
+    <label><input type="radio" name="mood_rating" value="1" <%='checked' if @edit_session.mood_rating == 1 %>> Awful</label><br>
+    <label><input type="radio" name="mood_rating" value="2" <%='checked' if @edit_session.mood_rating == 2%>> Not good</label><br>
+    <label><input type="radio" name="mood_rating" value="3" <%='checked' if @edit_session.mood_rating == 3 %>> Average</label><br>
+    <label><input type="radio" name="mood_rating" value="4" <%='checked' if @edit_session.mood_rating == 4 %>> Good</label><br>
+    <label><input type="radio" name="mood_rating" value="5" <%='checked' if @edit_session.mood_rating == 5%>> Amazing!</label><br>
+<br>
+        <input type="submit" name="Edit Session" id="submit">
+    <br>
+
+  </form>

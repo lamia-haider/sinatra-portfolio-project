@@ -1,12 +1,20 @@
 
 
   <form action='/sessions' method="post">
-  
-    How many minutes did you meditate for?
-    <input type="text" name="duration_minutes"><br>
-    
 
-    <input type="submit" name="submit" id="submit">
+
+    How many minutes did you meditate for today?
+    <input type="text" name="duration_minutes"><br>
+
+
+    How did you feel after?
+    <label><input type="radio" name="mood_rating" value="1"> Awful</label>
+    <label><input type="radio" name="mood_rating" value="2"> Not good</label>
+    <label><input type="radio" name="mood_rating" value="3"> Not bad but not great</label>
+    <label><input type="radio" name="mood_rating" value="4"> Good</label>
+    <label><input type="radio" name="mood_rating" value="4"> Amazing!</label>
+
+        <input type="submit" name="submit" id="submit">
     <br>
 
   </form>

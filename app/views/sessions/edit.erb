@@ -1,12 +1,12 @@
 
 
-  <form action='/sessions/<%=@edit_session.id%>/edit' method="post">
+  <form action= "/sessions/<%=@edit_session.id%>/edit" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
 
 
 
     How many minutes did you meditate for today?<br>
-    <input type="text" name="duration_minutes" value="<%=@edit_session.duration_minutes"><br>
+    <input type="text" name="duration_minutes" value="<%=@edit_session.duration_minutes%>"><br>
 
 <br>
     How did you feel after?<br>

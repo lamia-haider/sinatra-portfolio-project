@@ -8,16 +8,19 @@ class SessionController < ApplicationController
         erb :'/sessions/new'
     end
 
+
+    get '/sessions/:id' do
+        @session = Session.find_by(id: params[:id])
+       
+        erb :'/sessions/show'
+    end
+
     post '/sessions' do
         @new_session = Session.create(duration_minutes: params[:duration_minutes], mood_rating: params[:mood_rating])
         @new_session.user = User.find_by(id: session[:user_id])
         @new_session.save
-        redirect "/sessions/#{@new_session.id}"
-    end
-
-    get '/sessions/:id' do
-        @session = Session.find_by(params[:id])
-        erb :'/sessions/show'
+        raise params.inspect
+       # redirect "/sessions/#{@new_session.id}"
     end
 
     get '/sessions/:id/edit' do
@@ -28,13 +31,13 @@ class SessionController < ApplicationController
 
     patch '/sessions/:id/edit' do
         
-        @updated_session = Session.find_by(params[:id])
+        @edit_session = Session.find_by(params[:id])
         if params[:duration_minutes] != ""
-            @updated_session.duration_minutes = params[:duration_minutes]
-            @updated_session.mood_rating = params[:mood_rating]
-            @updated_session.save
+            @edit_session.duration_minutes = params[:duration_minutes]
+            @edit_session.mood_rating = params[:mood_rating]
+            @edit_session.save
         end
-        redirect "/sessions/#{@updated_session.id}"
+        redirect "/sessions/#{@edit_session.id}"
     end
 
 end

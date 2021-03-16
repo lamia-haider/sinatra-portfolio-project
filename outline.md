@@ -17,7 +17,7 @@ Models:
 -MeditationSession
     - Duration
     - Date
-    - Mood (dropdown or scale?) 
+    - Mood scale
     - :belongs_to Users/ user_id
 
 Stretch Goals

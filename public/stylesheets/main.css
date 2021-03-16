@@ -36,32 +36,25 @@
 
 /* CHECKED STYLES */
 [type=radio]:checked + img {
-  outline: 2px solid #f00;
+  outline: 2px solid rgb(238, 255, 0);
 }
 
-  a:link {
-    color: rgb(255, 255, 255);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: rgb(144, 193, 233);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: rgb(198, 236, 252);
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:active {
-    color: rgb(96, 252, 174);
-    background-color: transparent;
-    text-decoration: none;
-  }
+a:link, a:visited {
+  background-image: linear-gradient(to bottom, rgb(255, 255, 255) , rgb(206, 235, 247));
+  color: rgb(90, 142, 190);
+  padding: 14px 25px;
+  text-align: center;
+  font-size: medium;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+
+
+}
+
+a:hover, a:active {
+  background-image: linear-gradient(to bottom, rgb(228, 237, 248) , rgb(129, 188, 214));
+}
   .center_img {
   
     margin-left: auto;
@@ -118,11 +111,12 @@
   }
 
   .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
+    background:transparent;
+ 
+    float: left;
+    position:absolute;
+    margin:10px ;
+    width: 15%; /* 240px / 800px */
   }
 
   .sidebar ul {

@@ -1,12 +1,16 @@
 
-<%= @session.formatted_created_at%>
+<h2><%= @session.formatted_created_at%></h2>
 
 <br>
 
-<%= @session.duration_minutes%>
+<%= @session.duration_minutes%> minutes meditated!
 <br>
 
-<%=@session.mood_rating%>
+Your mood after:<br>
+<% if @session.mood_rating = "1"%>
+<img src="/images/awful.jpg" alt="awful" class="center_img">
+
+<%end%>
 
 
 

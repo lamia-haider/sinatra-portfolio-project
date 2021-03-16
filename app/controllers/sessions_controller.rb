@@ -3,6 +3,7 @@ class SessionController < ApplicationController
     get '/sessions/index' do
         if Helpers.is_logged_in?(session)
             @user = User.find_by(id: session[:user_id])
+            
             erb :'sessions/index'
         end
     end

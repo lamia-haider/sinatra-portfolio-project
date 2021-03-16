@@ -8,11 +8,14 @@
 
 
 <form action="/sessions/index" method = "post">
-
+Which of your previous sessions do you want to see?
+<br>
 <select name="date_select">
-<%Session.all.each do |sess|%> 
-<option value = "<%=sess.id%>"><%=sess.formatted_created_at%></a> </option>
 
+<%Session.all.each do |sess|%>
+<% if @user.id == sess.user_id%>
+<option value = "<%=sess.id%>"><%=sess.formatted_created_at%></a> </option>
+<%end%>
 <%end%>
         <input type="submit" name="submit" id="submit">
 

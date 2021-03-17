@@ -28,10 +28,10 @@ Stretch Goals
 
 
     User Auth:
-    - User cannot sign up without a valid email, username and pw
-    - If logged in when clicking log in or sign up user gets redirected to index
-    - User redirected to log in if trying to go into sessions without being logged in
-    - Show, edit and index only come up if logged in, otherwise redirect to welcome
+    - User cannot sign up without a valid email, username and pw x
+    - If logged in when clicking log in or sign up user gets redirected to index x
+    - User redirected to log in if trying to go into sessions without being logged in x 
+    - Show, edit and index only come up if logged in, otherwise redirect to welcome x
 
 
 

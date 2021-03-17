@@ -15,16 +15,30 @@
   <form action='/sessions' method="post">
 
 
-    How many minutes did you meditate for today?<br>
+   <h3> How many minutes did you meditate for today?</h3>
     <input type="text" name="duration_minutes"><br>
 
 <br>
-    How did you feel after?<br>
+    <h3>How did you feel after?</h3><br>
     <label><input type="radio" name="mood_rating" value="1"> <img src="/images/awful.jpg" alt="awful" class="center_img"></label>
     <label><input type="radio" name="mood_rating" value="2"> <img src="/images/not_great.jpg" alt="notgreat" class="center_img"></label>
     <label><input type="radio" name="mood_rating" value="3"> <img src="/images/average.jpg" alt="average" class="center_img"></label>
     <label><input type="radio" name="mood_rating" value="4"> <img src="/images/good.jpg" alt="good" class="center_img"></label>
     <label><input type="radio" name="mood_rating" value="5"> <img src="/images/amazing.jpg" alt="amazing" class="center_img"></label>
+<br>
+
+<h3> What type of medidation did you practice?</h3>
+
+<div class="typelist">
+   
+
+  <label><input type="checkbox" name="type" value="guided"> Guided - I followed the prompts given by a teacher/video/app</label> <br>
+  <label><input type="checkbox" name="type" value="unguided"> Unguided - I meditated alone without guidance</label><br>
+  <label><input type="checkbox" name="type" value="focused_attention"> Focused Attention - I used my breath to focus my attention</label><br>
+  <label><input type="checkbox" name="type" value="noting"> Noting - I noted rising thoughts and feelings, then let them go</label><br>
+  <label><input type="checkbox" name="type" value="visualization"> Visualization - I pictured something pleasant to focus on</label><br>
+  <label><input type="checkbox" name="type" value="other"> Something not listed here!</label><br>
+ </div>
 <br>
         <input type="submit" name="submit" id="submit">
     <br>

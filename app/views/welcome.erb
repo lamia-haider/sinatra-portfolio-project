@@ -1,4 +1,10 @@
+
 <div class="container">
+
+<% if flash.has?(:notice) %>
+  <%= flash[:notice] %>
+<% end %>
+
   
   <div class="col-md-8 col-md-offset-2">
     <h2>Welcome to the Meditation Tracker!</h2>

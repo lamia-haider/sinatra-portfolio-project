@@ -5,6 +5,7 @@ class SessionController < ApplicationController
             @user = User.find_by(id: session[:user_id])
             erb :'sessions/index'
         else
+            flash[:notice] = "You need to log in or sign up to view that page."
             redirect "/"
         end
     end
@@ -18,6 +19,7 @@ class SessionController < ApplicationController
         if Helpers.is_logged_in?(session)
             erb :'/sessions/new'
         else 
+            flash[:notice] = "You need to log in or sign up to view that page."
             redirect "/"
         end
     end
@@ -28,6 +30,7 @@ class SessionController < ApplicationController
             @session = Session.find_by(id: params[:id])
             erb :'/sessions/show'
         else 
+            flash[:notice] = "You need to log in or sign up to view that page."
             redirect "/"
         end
     end
@@ -50,6 +53,7 @@ class SessionController < ApplicationController
             @edit_session = Session.find_by(id: params[:id])
             erb :'/sessions/edit'
         else 
+            flash[:notice] = "You need to log in or sign up to view that page."
             redirect "/"
         end
     end

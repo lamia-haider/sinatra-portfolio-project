@@ -18,6 +18,9 @@ class UsersController < ApplicationController
         if @user.username.empty? || @user.email.empty? || !@user.save
             flash[:notice] = "User creation unsuccessful, please try again."
             redirect '/signup'
+        elsif !@user.email.include?("@")
+            flash[:notice]= "Please enter a valid email address."
+            redirect '/signup'
         else @user.save
             session[:user_id] = @user.id
             redirect "/sessions/index"

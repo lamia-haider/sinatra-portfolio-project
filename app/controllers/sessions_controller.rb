@@ -24,7 +24,7 @@ class SessionController < ApplicationController
 
 
     get '/sessions/:id' do
-        if Helpers.is_logged_in?(session)
+        if Helpers.is_logged_in?(session) 
             @session = Session.find_by(id: params[:id])
             erb :'/sessions/show'
         else 
@@ -33,10 +33,15 @@ class SessionController < ApplicationController
     end
 
     post '/sessions' do
-        @new_session = Session.create(duration_minutes: params[:duration_minutes], mood_rating: params[:mood_rating])
-        @new_session.user = User.find_by(id: session[:user_id])
-        @new_session.save
-        redirect "/sessions/#{@new_session.id}"
+        
+        if params[:duration_minutes] =~ /\d/ 
+            @new_session = Session.create(duration_minutes: params[:duration_minutes], mood_rating: params[:mood_rating])
+            @new_session.user = User.find_by(id: session[:user_id])
+            @new_session.save
+            redirect "/sessions/#{@new_session.id}"
+        else flash[:notice]= "Please enter a numeric value for minutes."
+            redirect "/sessions/new"
+        end
     end
 
     get '/sessions/:id/edit' do

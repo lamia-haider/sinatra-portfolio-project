@@ -27,5 +27,13 @@ Stretch Goals
     - Optional - Can select what type of meditation? Radio for guided v unguided, checkboxes for focused attention, body scan, noting, visualization, resting awareness, reflection, other. Ref: https://www.headspace.com/meditation/techniques
 
 
+    User Auth:
+    - User cannot sign up without a valid email, username and pw
+    - If logged in when clicking log in or sign up user gets redirected to index
+    - User redirected to log in if trying to go into sessions without being logged in
+    - Show, edit and index only come up if logged in, otherwise redirect to welcome
+
+
+
 
 

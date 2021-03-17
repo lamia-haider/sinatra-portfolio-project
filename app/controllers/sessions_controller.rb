@@ -3,8 +3,9 @@ class SessionController < ApplicationController
     get '/sessions/index' do
         if Helpers.is_logged_in?(session)
             @user = User.find_by(id: session[:user_id])
-            
             erb :'sessions/index'
+        else
+            redirect "/"
         end
     end
 
@@ -14,14 +15,21 @@ class SessionController < ApplicationController
     end
 
     get '/sessions/new' do
-        erb :'/sessions/new'
+        if Helpers.is_logged_in?(session)
+            erb :'/sessions/new'
+        else 
+            redirect "/"
+        end
     end
 
 
     get '/sessions/:id' do
-        @session = Session.find_by(id: params[:id])
-       
-        erb :'/sessions/show'
+        if Helpers.is_logged_in?(session)
+            @session = Session.find_by(id: params[:id])
+            erb :'/sessions/show'
+        else 
+            redirect "/"
+        end
     end
 
     post '/sessions' do
@@ -32,9 +40,13 @@ class SessionController < ApplicationController
     end
 
     get '/sessions/:id/edit' do
-        
-        @edit_session = Session.find_by(id: params[:id])
-        erb :'/sessions/edit'
+
+        if Helpers.is_logged_in?(session)
+            @edit_session = Session.find_by(id: params[:id])
+            erb :'/sessions/edit'
+        else 
+            redirect "/"
+        end
     end
 
     patch '/sessions/:id/edit' do

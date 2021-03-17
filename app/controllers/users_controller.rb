@@ -6,7 +6,11 @@ class UsersController < ApplicationController
     use Rack::Flash
 
     get '/signup' do
+        if session[:user_id] == nil
         erb :'/users/signup'
+        else
+            redirect '/sessions/index'
+        end
     end
 
     post '/signup' do
@@ -24,7 +28,11 @@ class UsersController < ApplicationController
 
 
     get '/login' do
-        erb :'/users/login'
+        if Helpers.is_logged_in?(session)
+            redirect "/sessions/index"
+        else
+            erb :'/users/login'
+        end
     end
 
     post '/login' do
@@ -32,6 +40,9 @@ class UsersController < ApplicationController
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
             redirect "/sessions/index"
+        else
+            flash[:notice] = "Login unsuccessful. Please enter your username and password again."
+            redirect "/login"
         end
 
     end
@@ -41,7 +52,7 @@ class UsersController < ApplicationController
           redirect "/"
         else
           session.clear
-          redirect '/'
+          redirect "/"
         end
     end
     

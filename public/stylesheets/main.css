@@ -13,9 +13,9 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: rgb(244, 255, 253);
-    color: rgb(244, 248, 250);
-    font-family: 'helvetica';
+    background-color: rgb(244, 249, 252);
+    color: rgb(88, 157, 192);
+    font-family: 'tahoma';
     font-size: large;
     text-align: center;
     line-height: 30px;
@@ -67,11 +67,11 @@ a:hover, a:active {
   }
   
   .wrapper {
-    background: rgb(88,176,212);
+    background: rgb(255, 255, 255);
     border-radius:10px; /* round corners */
-    box-shadow:0px 3px 5px 5px rgb(255, 255, 255); /* add shadow */
-    -moz-box-shadow: 0 0 10px rgba(255, 255, 255, 0.986);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow:0px 3px 5px 5px rgb(141, 178, 236); /* add shadow */
+    -moz-box-shadow: 0 0 10px rgba(111, 197, 236, 0.986);
+    -webkit-box-shadow: 0 0 10px rgba(131, 204, 238, 0.884);
     text-align: center;
 
     margin: 16px auto;
@@ -86,7 +86,7 @@ a:hover, a:active {
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
+  
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
@@ -106,7 +106,9 @@ a:hover, a:active {
   }
 
   .content {
-    float: left;
+    text-align: center;
+
+    margin: 16px auto;
     width: 60%; /* 480px / 800px */
   }
 

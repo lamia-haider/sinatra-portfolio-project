@@ -25,9 +25,23 @@ Your mood after:<br>
 <% elsif @session.mood_rating == 5 %>
 <img id="m2" src="/images/amazing.jpg">
 <%end%>
-
-
 <br>
+
+Your method:
+<% if @session.meditype == "guided"%>
+Guided - I followed the prompts given by a teacher/video/app
+<% elsif @session.meditype == "unguided"%>
+Unguided - I meditated alone without guidance
+<% elsif @session.meditype == "focused_attention"%>
+Focused Attention - I used my breath to focus my attention
+<% elsif @session.meditype == "noting"%>  
+Noting - I noted rising thoughts and feelings, then let them go
+<% elsif @session.meditype == "visualization"%>
+Visualization - I pictured something pleasant to focus on
+<% elsif @session.meditype == "other"%>Something not listed here!
+<%end%>
+
+
 <br>
 
 

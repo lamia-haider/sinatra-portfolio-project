@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_204713) do
   create_table "sessions", force: :cascade do |t|
     t.integer "duration_minutes"
     t.integer "mood_rating"
-    t.string "type"
+    t.string "meditype"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

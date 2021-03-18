@@ -30,7 +30,23 @@
     <label><input type="radio" name="mood_rating" value="4" <%='checked' if @edit_session.mood_rating == 4 %>> <img src="/images/good.jpg" alt="good" class="center_img"></label>
     <label><input type="radio" name="mood_rating" value="5" <%='checked' if @edit_session.mood_rating == 5%>> <img src="/images/amazing.jpg" alt="amazing" class="center_img"></label>
 <br>
+
+<h3> What type of medidation did you practice?</h3>
+
+<div class="typelist">
+   
+
+  <label><input type="checkbox" name="meditype" value="guided" <%='checked' if @edit_session.meditype == "guided"%>> Guided - I followed the prompts given by a teacher/video/app</label> <br>
+  <label><input type="checkbox" name="meditype" value="unguided" <%='checked' if @edit_session.meditype == "unguided"%>> Unguided - I meditated alone without guidance</label><br>
+  <label><input type="checkbox" name="meditype" value="focused_attention" <%='checked' if @edit_session.meditype == "focused_attention"%>> Focused Attention - I used my breath to focus my attention</label><br>
+  <label><input type="checkbox" name="meditype" value="noting" <%='checked' if @edit_session.meditype == "noting"%>> Noting - I noted rising thoughts and feelings, then let them go</label><br>
+  <label><input type="checkbox" name="meditype" value="visualization" <%='checked' if @edit_session.meditype == "visualization"%>> Visualization - I pictured something pleasant to focus on</label><br>
+  <label><input type="checkbox" name="meditype" value="other" <%='checked' if @edit_session.meditype == "other"%>> Something not listed here!</label><br>
+ </div>
+<br>
         <input type="submit" name="Edit Session" id="submit">
-    <br>
+ 
+
+
 
   </form>

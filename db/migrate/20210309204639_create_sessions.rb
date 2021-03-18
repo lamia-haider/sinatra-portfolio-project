@@ -3,7 +3,7 @@ class CreateSessions < ActiveRecord::Migration[6.0]
     create_table :sessions do |t|
       t.integer :duration_minutes
       t.integer :mood_rating
-      t.string :type
+      t.string :meditype
       t.integer :user_id
       t.timestamps null: false
     end

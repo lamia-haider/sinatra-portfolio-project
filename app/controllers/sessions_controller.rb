@@ -36,9 +36,10 @@ class SessionController < ApplicationController
     end
 
     post '/sessions' do
-        
+    
         if params[:duration_minutes] =~ /\d/ 
-            @new_session = Session.create(duration_minutes: params[:duration_minutes], mood_rating: params[:mood_rating], meditype:params[:meditype])
+            @new_session = Session.create(duration_minutes: params[:duration_minutes], mood_rating: params[:mood_rating])
+            @new_session.meditype = params[:meditypes]
             @new_session.user = User.find_by(id: session[:user_id])
             @new_session.save
             redirect "/sessions/#{@new_session.id}"

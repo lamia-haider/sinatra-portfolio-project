@@ -4,6 +4,7 @@
       <ul>
         <li><a href="/sessions/index">All Sessions</a></li>
         <li><a href="/logout">Log Out</a>
+        <li><a href="/sessions/<%=@session.id%>/edit">Edit Session</a>
 
       </ul>
     </div>
@@ -27,18 +28,24 @@ Your mood after:<br>
 <%end%>
 <br>
 
-Your method:
-<% if @session.meditype == "guided"%>
-Guided - I followed the prompts given by a teacher/video/app
-<% elsif @session.meditype == "unguided"%>
-Unguided - I meditated alone without guidance
-<% elsif @session.meditype == "focused_attention"%>
-Focused Attention - I used my breath to focus my attention
-<% elsif @session.meditype == "noting"%>  
-Noting - I noted rising thoughts and feelings, then let them go
-<% elsif @session.meditype == "visualization"%>
-Visualization - I pictured something pleasant to focus on
-<% elsif @session.meditype == "other"%>Something not listed here!
+The type(s) of meditation you practiced:
+<br>
+<% if @session.meditype.include? ("guided")%>
+Guided - I followed the prompts given by a teacher/video/app<br>
+<%end%>
+<% if @session.meditype.include? ("unguided")%>
+Unguided - I meditated alone without guidance<br>
+<%end%>
+<% if @session.meditype.include? ("focused_attention")%>
+Focused Attention - I used my breath to focus my attention<br>
+<%end%>
+<% if @session.meditype.include? ("noting")%>  
+Noting - I noted rising thoughts and feelings, then let them go<br>
+<%end%>
+<% if @session.meditype.include? ("visualization")%>
+Visualization - I pictured something pleasant to focus on<br>
+<%end%>
+<% if @session.meditype.include? ("other")%>Something not listed here!<br>
 <%end%>
 
 

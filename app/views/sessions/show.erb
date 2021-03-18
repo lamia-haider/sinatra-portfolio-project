@@ -11,10 +11,10 @@
 
 <br>
 
-<%= @session.duration_minutes%> minutes meditated!
+<h2><%= @session.duration_minutes%> minutes meditated!</h2>
 <br>
 <br>
-Your mood after:<br>
+<h3>Your mood after:</h3><br>
 <% if @session.mood_rating == 1 %>
 <img id="m1" src="/images/awful.jpg">
 <% elsif @session.mood_rating == 2 %>
@@ -27,9 +27,9 @@ Your mood after:<br>
 <img id="m2" src="/images/amazing.jpg">
 <%end%>
 <br>
-
-The type(s) of meditation you practiced:
 <br>
+<h3>The type(s) of meditation you practiced:</h3>
+
 <% if @session.meditype.include? ("guided")%>
 Guided - I followed the prompts given by a teacher/video/app<br>
 <%end%>

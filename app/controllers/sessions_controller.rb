@@ -65,6 +65,7 @@ class SessionController < ApplicationController
         if params[:duration_minutes] != ""
             @edit_session.duration_minutes = params[:duration_minutes]
             @edit_session.mood_rating = params[:mood_rating]
+            @edit_session.meditype = params[:meditype]
             @edit_session.save
         end
         redirect "/sessions/#{@edit_session.id}"

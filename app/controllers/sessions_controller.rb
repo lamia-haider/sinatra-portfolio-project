@@ -28,9 +28,11 @@ class SessionController < ApplicationController
     get '/sessions/:id' do
         if Helpers.is_logged_in?(session) 
             @session = Session.find_by(id: params[:id])
+        end
+        if @session.user_id == session[:user_id]
             erb :'/sessions/show'
         else 
-            flash[:notice] = "You need to log in or sign up to view that page."
+            flash[:notice] = "You don't have access to that page."
             redirect "/"
         end
     end
@@ -50,11 +52,13 @@ class SessionController < ApplicationController
 
     get '/sessions/:id/edit' do
 
-        if Helpers.is_logged_in?(session)
+        if Helpers.is_logged_in?(session) 
             @edit_session = Session.find_by(id: params[:id])
+        end
+        if @edit_session.user_id == session[:user_id]
             erb :'/sessions/edit'
         else 
-            flash[:notice] = "You need to log in or sign up to view that page."
+            flash[:notice] = "You don't have access to that page."
             redirect "/"
         end
     end

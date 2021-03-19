@@ -1,5 +1,6 @@
 
-<h2><%= @session.formatted_created_at%></h2> <div class="sidebar">
+<h2><%= @session.formatted_created_at%></h2> 
+<div class="sidebar">
 
       <ul>
         <li><a href="/sessions/index">All Sessions</a></li>
@@ -51,7 +52,7 @@ Visualization - I pictured something pleasant to focus on<br>
 
 <br>
 
-
+<br>
 
 <form action="/sessions/<%=@session.id%>/delete" method = "post">
   <input id="hidden" type="hidden" name="_method" value="delete">

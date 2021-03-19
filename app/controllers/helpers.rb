@@ -5,9 +5,6 @@ class Helpers < ApplicationController
         !!session[:user_id]
     end
         
-    def self.current_user(user)
-        @user= User.find(id: user[:user_id])
-    end
 
 
 end

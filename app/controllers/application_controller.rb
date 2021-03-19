@@ -11,7 +11,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    if Helpers.is_logged_in?(session)
+      redirect "/sessions/index"
+    else
+      erb :welcome
+    end
   end
 
 end

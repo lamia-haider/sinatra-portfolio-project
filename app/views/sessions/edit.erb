@@ -31,7 +31,7 @@
     <label><input type="radio" name="mood_rating" value="5" <%='checked' if @edit_session.mood_rating == 5%>> <img src="/images/amazing.jpg" alt="amazing" class="center_img"></label>
 <br>
 
-<h3> What type of medidation did you practice?</h3>
+<h3> What type of meditation did you practice?</h3>
 
 <div class="typelist">
    
@@ -45,8 +45,11 @@
  </div>
 <br>
         <input type="submit" name="Edit Session" id="submit">
- 
+<br>
 
-
-
+<br>
   </form>
+  <form action="/sessions/<%=@edit_session.id%>/delete" method = "post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete this session?">
+</form>

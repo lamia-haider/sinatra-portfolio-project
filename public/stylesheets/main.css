@@ -153,16 +153,47 @@ a:hover, a:active {
     width: auto;
   }
 
-  .content, .sidebar {
+  .content {
     float: none;
     width: 100%;
   }
+  a:link, a:visited {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255) , rgb(206, 235, 247));
+    color: rgb(90, 142, 190);
+    padding: 14px 25px;
+    text-align: center;
+    font-size: medium;
+    text-decoration: none;
+    display: block;
+    float: left;
+    border-radius: 10px;
+  
+  
+  }
+  
+  
+  a:hover, a:active {
+    background-image: linear-gradient(to bottom, rgb(228, 237, 248) , rgb(129, 188, 214));
+  }
+    .center_img {
+    
+      margin-left: auto;
+      margin-right: auto;
+      
+      max-width: 40%;
+      padding: 30px 10px;
+      border-radius: 50%;
+   
+    }
+  
+  
 
   .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
+    background:transparent;
+ 
+    float: left;
+    position:fixed;
+    width: 5%; 
   }
 
   .center {
